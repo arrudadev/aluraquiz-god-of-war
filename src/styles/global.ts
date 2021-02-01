@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   *, input, button {
     font-family: 'Lato', sans-serif;
+    color: ${({ theme }) => theme.colors.contrastText};
   }
 
   html, body {
