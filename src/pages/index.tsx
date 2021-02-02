@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import Button from '../components/Button';
 import { Card, CardHeader, CardContent, CardTopic } from '../components/Card';
+import Footer from '../components/Footer';
 import Input from '../components/Input';
 import Link from '../components/Link';
 import QuizBackground from '../components/QuizBackground';
@@ -75,6 +76,8 @@ const Home: React.FC = () => {
             </ul>
           </CardContent>
         </Card>
+
+        <Footer />
       </QuizContainer>
     </QuizBackground>
   );
