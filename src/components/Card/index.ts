@@ -17,12 +17,14 @@ export const Card = styled.div`
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
+
   p {
     font-size: 14px;
     font-weight: 400;
     line-height: 1;
+    margin-bottom: 10px;
   }
 `;
 
