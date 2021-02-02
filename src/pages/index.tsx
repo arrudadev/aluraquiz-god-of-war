@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 
         <Card>
           <CardHeader>
-            <h1>Quiz God of War #AluraQuiz</h1>
+            <h1 style={{ margin: 0 }}>Quiz God of War #AluraQuiz</h1>
           </CardHeader>
           <CardContent>
             <p>Teste seu conhecimento sobre a saga God of War</p>
