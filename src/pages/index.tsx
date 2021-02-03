@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Button from '../components/Button';
 import { Card, CardHeader, CardContent, CardTopic } from '../components/Card';
 import Footer from '../components/Footer';
+import GitHubCorner from '../components/GitHubCorner';
 import Input from '../components/Input';
 import Link from '../components/Link';
 import QuizBackground from '../components/QuizBackground';
@@ -78,6 +79,8 @@ const Home: React.FC = () => {
         </Card>
 
         <Footer />
+
+        <GitHubCorner projectUrl="https://github.com/monteiro-alexandre/aluraquiz-god-of-war" />
       </QuizContainer>
     </QuizBackground>
   );
