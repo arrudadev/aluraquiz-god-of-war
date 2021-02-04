@@ -1,13 +1,14 @@
 import { ChangeEvent, useState } from 'react';
 
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import Button from '../components/Button';
-import { Card, CardHeader, CardContent, CardTopic } from '../components/Card';
+import { Card, CardHeader, CardContent } from '../components/Card';
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
 import Input from '../components/Input';
-import Link from '../components/Link';
+import OtherQuizzes from '../components/OtherQuizzes';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
 import QuizLogo from '../components/QuizLogo';
@@ -15,14 +16,15 @@ import QuizLogo from '../components/QuizLogo';
 const Home: React.FC = () => {
   const [name, setName] = useState('');
 
-  const externals = [
-    'https://aluraquiz-css.omariosouto.vercel.app/',
-    'https://aluraquiz-devsoutinho.omariosouto.vercel.app/',
-    'https://aluraquiz.edilson-rodrigues.vercel.app/',
-  ];
+  const router = useRouter();
 
   const handleInputNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
+  };
+
+  const handleSubmitForm = event => {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
   };
 
   return (
@@ -40,7 +42,7 @@ const Home: React.FC = () => {
           <CardContent>
             <p>Teste seu conhecimento sobre a saga God of War</p>
 
-            <form>
+            <form onSubmit={handleSubmitForm}>
               <Input
                 placeholder="Diz ai seu nome"
                 onChange={handleInputNameChange}
@@ -54,29 +56,7 @@ const Home: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardContent>
-            <h1>Quizes da Galera</h1>
-
-            <ul>
-              {externals.map(externalLink => {
-                const [projectName, githubUser] = externalLink
-                  .replace(/\//g, '')
-                  .replace('https:', '')
-                  .replace('.vercel.app', '')
-                  .split('.');
-
-                return (
-                  <li key={externalLink}>
-                    <CardTopic as={Link} href={externalLink}>
-                      {`${githubUser}/${projectName}`}
-                    </CardTopic>
-                  </li>
-                );
-              })}
-            </ul>
-          </CardContent>
-        </Card>
+        <OtherQuizzes />
 
         <Footer />
 

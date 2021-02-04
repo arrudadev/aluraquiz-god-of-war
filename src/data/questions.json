@@ -1,0 +1,22 @@
+[
+  {
+    "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
+    "title": "Qual a diferença entre = , == e === ?",
+    "description": "Pergunta fácil em!",
+    "answer": 1,
+    "alternatives": [
+      "São a mesma coisa",
+      "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
+    ]
+  },
+  {
+    "image": "https://media.giphy.com/media/Ie2Hs3A0uJRtK/giphy.gif",
+    "title": "Que tipos de dados são suportados em JavaScript?",
+    "description": "E agora? Você sabe?",
+    "answer": 0,
+    "alternatives": [
+      "Number, String, Undefined, Null e Bool.",
+      "Int, String, Undefined, Null e Bool."
+    ]
+  }
+]
