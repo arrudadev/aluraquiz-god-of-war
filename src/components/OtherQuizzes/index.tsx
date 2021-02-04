@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import { Card, CardContent, CardTopic } from '../Card';
 import Link from '../Link';
 
@@ -9,7 +11,16 @@ const externals = [
 
 const OtherQuizzes: React.FC = () => {
   return (
-    <Card>
+    <Card
+      as={motion.section}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <CardContent>
         <h1>Outros Quizzes</h1>
 

@@ -1,8 +1,19 @@
+import { motion } from 'framer-motion';
+
 import { FooterWrapper } from './styles';
 
-const Footer: React.FC = props => {
+const Footer: React.FC = () => {
   return (
-    <FooterWrapper {...props}>
+    <FooterWrapper
+      as={motion.footer}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <a href="https://www.alura.com.br/">
         <img src="alura-logo-white.svg" alt="Logo Alura" />
       </a>

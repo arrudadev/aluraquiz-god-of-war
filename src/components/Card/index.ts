@@ -58,7 +58,7 @@ export const CardContent = styled.div`
   }
 `;
 
-export const CardTopic = styled.a`
+export const CardTopic = styled.a<{ isSelected?: boolean; status?: boolean }>`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
@@ -73,6 +73,14 @@ export const CardTopic = styled.a`
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.3s;
   display: block;
+
+  opacity: ${props => {
+    if (props.status) return '1';
+
+    if (props.isSelected) return '0.5';
+
+    return '1';
+  }};
 
   &:hover,
   &:focus {

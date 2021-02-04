@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { motion } from 'framer-motion';
+
 import { AlternativesForm } from '../AlternativesForm';
 import BackLinkArrow from '../BackLinkArrow';
 import Button from '../Button';
@@ -34,8 +36,8 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = ({
     setTimeout(() => {
       addResult(isCorrect);
       onSubmit();
-      setIsQuestionSubmited(false);
       setSelectedAlternative(undefined);
+      setIsQuestionSubmited(false);
     }, 3000);
   };
 
@@ -44,7 +46,16 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = ({
   };
 
   return (
-    <Card>
+    <Card
+      as={motion.footer}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <CardHeader>
         <BackLinkArrow href="/" />
         <h3 style={{ margin: 0 }}>
@@ -77,12 +88,15 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = ({
                 htmlFor={alternativeId}
                 data-selected={isSelected}
                 data-status={isQuestionSubmited && alternativeStatus}
+                isSelected={isSelected}
+                status={isQuestionSubmited}
               >
                 <input
                   style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
                   onChange={() => handleSelectAlternative(alternativeIndex)}
+                  checked={isSelected}
                   type="radio"
                 />
                 {alternative}

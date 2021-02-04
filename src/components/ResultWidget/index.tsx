@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import BackLinkArrow from '../BackLinkArrow';
 import { Card, CardContent, CardHeader } from '../Card';
 
@@ -7,7 +9,16 @@ interface ResultWidgetProps {
 
 const ResultWidget: React.FC<ResultWidgetProps> = ({ results }) => {
   return (
-    <Card>
+    <Card
+      as={motion.footer}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <CardHeader>
         <BackLinkArrow href="/" />
         Tela de Resultado:

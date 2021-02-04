@@ -3,6 +3,8 @@ import { ChangeEvent, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { motion } from 'framer-motion';
+
 import Button from '../components/Button';
 import { Card, CardHeader, CardContent } from '../components/Card';
 import Footer from '../components/Footer';
@@ -35,7 +37,16 @@ const Home: React.FC = () => {
       <QuizContainer>
         <QuizLogo />
 
-        <Card>
+        <Card
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: '0' },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <CardHeader>
             <h1 style={{ margin: 0 }}>Quiz God of War #AluraQuiz</h1>
           </CardHeader>
