@@ -1,22 +1,41 @@
 [
   {
-    "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
-    "title": "Qual a diferença entre = , == e === ?",
-    "description": "Pergunta fácil em!",
-    "answer": 1,
+    "image": "question1.jpg",
+    "title": "Como Kratos torna-se o Deus da Guerra?",
+    "description": "Dica: God of War 1",
+    "answer": 2,
     "alternatives": [
-      "São a mesma coisa",
-      "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
+      "Matando a Medusa",
+      "Matando a Hidra",
+      "Matando a Ares",
+      "Matando a Zeus",
+      "Matando a Atena"
     ]
   },
   {
-    "image": "https://media.giphy.com/media/Ie2Hs3A0uJRtK/giphy.gif",
-    "title": "Que tipos de dados são suportados em JavaScript?",
-    "description": "E agora? Você sabe?",
-    "answer": 0,
+    "image": "question2.jpg",
+    "title": "Com que arma Kratos mata Ares?",
+    "description": "Era uma ponte construída de metal no formato de uma espada enorme, nos arredores de Atenas",
+    "answer": 4,
     "alternatives": [
-      "Number, String, Undefined, Null e Bool.",
-      "Int, String, Undefined, Null e Bool."
+      "Blades of Chaos",
+      "Espada do Olimpo",
+      "Blades of Athena",
+      "Blade of Artemis",
+      "Blade of the Gods"
+    ]
+  },
+  {
+    "image": "question3.jpg",
+    "title": "Qual é a evoluição das laminas do caos do god of war 3",
+    "description": "Lâminas novas dado pelo espírito de Atena no Submundo",
+    "answer": 2,
+    "alternatives": [
+      "Blades of Athena",
+      "Espada do Olimpo",
+      "Lâminas do Exílio",
+      "Blade of Artemis",
+      "Blade of the Gods"
     ]
   }
 ]
