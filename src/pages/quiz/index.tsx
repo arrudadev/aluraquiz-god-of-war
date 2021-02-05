@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { useRouter } from 'next/router';
+
 import Footer from '../../components/Footer';
 import GitHubCorner from '../../components/GitHubCorner';
 import LoadingWidget from '../../components/LoadingWidget';
@@ -21,6 +23,8 @@ const QuizPage: React.FC = () => {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  const router = useRouter();
 
   const questionIndex = currentQuestion;
   const question = questions[questionIndex];
@@ -63,7 +67,7 @@ const QuizPage: React.FC = () => {
 
         {screenState === screenStates.RESULT && (
           <>
-            <ResultWidget results={results} />
+            <ResultWidget results={results} userName={router.query.name} />
 
             <OtherQuizzes />
 

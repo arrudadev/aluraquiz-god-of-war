@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion';
 
-import BackLinkArrow from '../BackLinkArrow';
 import { Card, CardContent, CardHeader } from '../Card';
+import { ReturnHomeContainer } from './styles';
 
 interface ResultWidgetProps {
   results: boolean[];
+  userName: string | string[];
 }
 
-const ResultWidget: React.FC<ResultWidgetProps> = ({ results }) => {
+const ResultWidget: React.FC<ResultWidgetProps> = ({ results, userName }) => {
+  const points = results.filter(x => x).length * 100;
+
   return (
     <Card
       as={motion.footer}
@@ -19,13 +22,11 @@ const ResultWidget: React.FC<ResultWidgetProps> = ({ results }) => {
       initial="hidden"
       animate="show"
     >
-      <CardHeader>
-        <BackLinkArrow href="/" />
-        Tela de Resultado:
-      </CardHeader>
+      <CardHeader>Resultado</CardHeader>
 
       <CardContent>
-        <p>Você acertou {results.filter(x => x).length} perguntas</p>
+        <p>Seu resultado, {userName}</p>
+        <h3>Você fez {points} pontos</h3>
         <ul>
           {results.map((result, index) => (
             <li key={`result__${result}`}>
@@ -34,6 +35,9 @@ const ResultWidget: React.FC<ResultWidgetProps> = ({ results }) => {
             </li>
           ))}
         </ul>
+        <ReturnHomeContainer>
+          <a href="/">Voltar para a home</a>
+        </ReturnHomeContainer>
       </CardContent>
     </Card>
   );
