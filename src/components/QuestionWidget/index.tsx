@@ -6,6 +6,7 @@ import { AlternativesForm } from '../AlternativesForm';
 import BackLinkArrow from '../BackLinkArrow';
 import Button from '../Button';
 import { Card, CardContent, CardHeader, CardTopic } from '../Card';
+import { ResultContainer } from './styles';
 
 interface QuestionWidgetProps {
   question: IQuestion;
@@ -108,8 +109,16 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = ({
             Confirmar
           </Button>
 
-          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
-          {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
+          {isQuestionSubmited && isCorrect && (
+            <ResultContainer>
+              <img src="/correct.png" alt="Icone acertou" />
+            </ResultContainer>
+          )}
+          {isQuestionSubmited && !isCorrect && (
+            <ResultContainer>
+              <img src="/incorrect.png" alt="Icone errou" />
+            </ResultContainer>
+          )}
         </AlternativesForm>
       </CardContent>
     </Card>
