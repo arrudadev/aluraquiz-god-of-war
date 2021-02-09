@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
 
+import axios from 'axios';
+
 import Footer from '../../components/Footer';
 import GitHubCorner from '../../components/GitHubCorner';
 import LoadingWidget from '../../components/LoadingWidget';
@@ -11,7 +13,6 @@ import QuizBackground from '../../components/QuizBackground';
 import QuizContainer from '../../components/QuizContainer';
 import QuizLogo from '../../components/QuizLogo';
 import ResultWidget from '../../components/ResultWidget';
-import questions from '../../data/questions.json';
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -23,23 +24,39 @@ const QuizPage: React.FC = () => {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [totalQuestions, setTotalQuestions] = useState(0);
+  const [questions, setQuestions] = useState([]);
+  const [question, setQuestion] = useState<IQuestion>({
+    image: '',
+    title: '',
+    description: '',
+    answer: 0,
+    alternatives: [],
+  });
 
   const router = useRouter();
 
   const questionIndex = currentQuestion;
-  const question = questions[questionIndex];
-  const totalQuestions = questions.length;
 
   useEffect(() => {
-    setTimeout(() => {
-      setScreenState(screenStates.QUIZ);
-    }, 2000);
+    axios.post('/api/questions').then(response => {
+      const responseQuestions = response.data;
+
+      setQuestions(response.data);
+      setQuestion(responseQuestions[questionIndex]);
+      setTotalQuestions(responseQuestions.length);
+
+      setTimeout(() => {
+        setScreenState(screenStates.QUIZ);
+      }, 2000);
+    });
   }, []);
 
   const handleSubmitQuiz = () => {
     const nextQuestion = questionIndex + 1;
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
+      setQuestion(questions[nextQuestion]);
     } else {
       setScreenState(screenStates.RESULT);
     }
