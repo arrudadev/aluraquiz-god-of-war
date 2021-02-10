@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="AluraQuiz" title="AluraQuiz" src="https://github.com/monteiro-alexandre/aluraquiz-god-of-war/blob/master/.github/assets/logo.svg" />
+    <img alt="AluraQuiz" title="AluraQuiz" src="https://github.com/monteiro-alexandre/aluraquiz-god-of-war/blob/master/.github/assets/logo.png" />
 </h1>
 
 > AluraQuiz is an online quiz to test your knowledge of the God Of War saga.
@@ -8,6 +8,7 @@ Project built during Alura's React Immersion NextJS edition! [`Immersion Showcas
 
 <div align="left">
 
+![build](https://github.com/monteiro-alexandre/aluraquiz-god-of-war/workflows/build/badge.svg?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 </div>
