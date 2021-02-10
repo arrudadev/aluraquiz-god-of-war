@@ -1,10 +1,14 @@
-<h1 align="center">
-    <img alt="AluraQuiz" title="AluraQuiz" src="https://github.com/monteiro-alexandre/aluraquiz-god-of-war/blob/master/.github/assets/logo.png" />
+<h1>
+  <a href="https://aluraquiz-god-of-war.vercel.app/">
+    AluraQuiz - God of War
+  </a>
 </h1>
 
 > AluraQuiz is an online quiz to test your knowledge of the God Of War saga.
 
 Project built during Alura's React Immersion NextJS edition! [`Immersion Showcase`](https://aluraquiz-base.alura-challenges.vercel.app/contribuidores).
+
+<p>Alura Quiz God of War Deployed <a href="https://aluraquiz-god-of-war.vercel.app/">here</a>.</p>
 
 <div align="left">
 
